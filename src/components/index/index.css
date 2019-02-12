@@ -1,0 +1,116 @@
+@media only screen and (max-width: 600px) {
+  .main-container{
+    background-image: url("../../image/index.jpg");
+    height:100vh;
+    width:100vw;
+    background-position: center;
+    background-size: cover;
+    
+  }
+  
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content:  center;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color : black;
+    opacity: 0.8;
+  
+  }
+  .text-content{
+    width: 100vw;
+    margin-top: 15vh;
+    
+    text-align: center;
+    font-weight: bolder;
+    line-height: 6vh;
+    color:white;
+  }
+  
+  
+  
+  .bg{
+    margin-top: 10vh;
+    content: "";
+    position: absolute;
+    height: 70vh;
+    width:100vw ;
+    background-color: black;
+    opacity: 0.5;
+    top: 0;
+    bottom: 0;
+  }
+  .login *{
+    padding: .5vh;
+  }
+  .socialmedia *{
+    padding: .5vh;
+  }
+ 
+}
+
+@media only screen and (min-width: 600px) {
+  .main-container{
+    background-image: url("../../image/index.jpg");
+    height:100vh;
+    width:100vw;
+    background-position: center;
+    background-size: cover;
+  
+  }
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+ 
+}
+  .displaytext{
+    width: auto;
+    padding: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+   
+    border:1px solid orange;
+    margin-top:20vh;
+    color: white;
+    background-color : black;
+    opacity: 0.8;
+  }
+
+  .displaytext h1,h2,img{
+    opacity: 1;
+  }
+  
+  
+
+ 
+  .displayform{
+    padding: 5vh;
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
+    border:1px solid orange;
+    margin-top:20vh;
+
+  }
+  .displayform {
+    background-color: black;
+    opacity:0.8;;
+  }
+
+  
+  .socialmedia *{
+    padding: .5vh;
+  }
+}
+
+
+
+
