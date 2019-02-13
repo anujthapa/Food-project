@@ -4,20 +4,32 @@ import logo from "../../image/logo.png";
 import Textinput from "../common/Textinput";
 import Socialmedialogin from "../common/Socialmedialogin";
 import Signup from "./Signupform";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { loginUser, toogleHandaler } from "../../action/authAction";
+import { Link } from "react-router-dom";
 
 class Index extends Component {
   state = {
     email: "",
-    password: "",
-    toggle: true
+    password: ""
   };
 
   changeHandaler = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  toggleHandaler = () => {
-    this.setState({ toggle: !this.state.toggle });
+  submitHandaler = e => {
+    e.preventDefault();
+    const newData = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    this.props.loginUser(newData);
+  };
+
+  toogleHandaler = () => {
+    this.props.toogleHandaler();
   };
 
   render() {
@@ -40,33 +52,43 @@ class Index extends Component {
             className="form-control"
             onChange={this.changeHandaler}
           />
-        </form>
-        <div className="login">
-          {" "}
-          <button className="btn btn-success btn-md">Login</button>
-          <div className="socialmedia">
-            {" "}
-            <Socialmedialogin
-              value="Facebook"
-              text="Enter with Facebook"
-              icon="fab fa-facebook"
-              className="btn-primary"
-            />
-            <Socialmedialogin
-              value="Google"
-              text="Enter with Google"
-              icon="fab fa-google"
-            />
-            <button
-              className="btn btn-info btn-xs"
-              onClick={this.toggleHandaler}
-            >
-              Not a member yet
-            </button>
+
+          <div className="login">
+            <Link to="/Secondpage">
+              {" "}
+              <button
+                type="submit"
+                value="Submit"
+                className="btn btn-success btn-md"
+              >
+                Login
+              </button>
+            </Link>
+            <div className="socialmedia">
+              {" "}
+              <Socialmedialogin
+                value="Facebook"
+                text="Enter with Facebook"
+                icon="fab fa-facebook"
+                className="btn-primary"
+              />
+              <Socialmedialogin
+                value="Google"
+                text="Enter with Google"
+                icon="fab fa-google"
+              />
+              <button
+                className="btn btn-info btn-xs"
+                onClick={this.toogleHandaler}
+              >
+                Not a member yet
+              </button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     );
+
     return (
       <div className="main-container">
         <div className="container">
@@ -86,11 +108,12 @@ class Index extends Component {
             </div>
           </div>
           <div className="displayform">
-            {" "}
-            {this.state.toggle ? (
+            {this.props.auth.toogle ? (
               login
             ) : (
-              <Signup onClick={this.toggleHandaler} />
+              <span>
+                <Signup />
+              </span>
             )}
           </div>
         </div>
@@ -98,4 +121,18 @@ class Index extends Component {
     );
   }
 }
-export default Index;
+Index.propTypes = {
+  auth: PropTypes.object.isRequired,
+  loginUser: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
+  toogleHandaler: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+export default connect(
+  mapStateToProps,
+  { loginUser, toogleHandaler }
+)(Index);

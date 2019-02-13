@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import Textinput from "../common/Textinput";
+import { connect } from "react-redux";
+import { registerUser } from "../../action/authAction";
+import PropsTypes from "prop-types";
 
 class Signupform extends Component {
   state = {
@@ -12,7 +15,14 @@ class Signupform extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
   submitHandaler = e => {
-    console.log(this.state);
+    e.preventDefault();
+    const newUser = {
+      email: this.state.email,
+      name: this.state.name,
+      password: this.state.password,
+      password2: this.state.password2
+    };
+    this.props.registerUser(newUser);
   };
 
   render() {
@@ -53,14 +63,31 @@ class Signupform extends Component {
               className="form-control"
               onChange={this.changeHandaler}
             />
+            <button
+              type="submit"
+              className="btn btn-success btn-md"
+              onClick={onClick}
+            >
+              Sign Up
+            </button>
           </form>
-          <button className="btn btn-success btn-md" onClick={onClick}>
-            Sign Up
-          </button>
         </div>
       </div>
     );
   }
 }
 
-export default Signupform;
+Signupform.propsTypes = {
+  registerUser: PropsTypes.func.isRequired,
+  auth: PropsTypes.object.isRequired,
+  errors: PropsTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { registerUser }
+)(Signupform);
