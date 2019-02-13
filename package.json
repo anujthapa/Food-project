@@ -14,7 +14,7 @@
     "validator": "^10.11.0"
   },
   "scripts": {
-    "redux":"yarn-add-redux@^6.0.0",
+    "redux":"yarn-add-redux@^4.0.0-0",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
