@@ -1,44 +1,22 @@
 import React, { Component } from "react";
 import Card from "../common/Card";
+import { data } from "../../data/data";
 export default class index extends Component {
-  state = [
-    {
-      title: "vegetarian"
-    },
-    {
-      title: "Vegan"
-    },
-    {
-      title: "Italian"
-    },
-    {
-      title: "Gluten Free"
-    },
-    {
-      title: "Asian"
-    },
-    {
-      title: "Japanese"
-    },
-    {
-      title: "American"
-    },
-    {
-      title: "Spanish"
-    },
-    {
-      title: "Mexican"
-    },
-    {
-      title: "Healthy"
-    }
-  ];
+  state = { data };
 
   render() {
+    console.log(this.state);
+
     return (
       <div>
-        {this.state.map(item => (
-          <Card title={item.title} />
+        {this.state.data.map(item => (
+          <Card
+            title={item.name}
+            image={item.imageURL}
+            steps={item.steps.map(item => (
+              <li>{item}</li>
+            ))}
+          />
         ))}
       </div>
     );
