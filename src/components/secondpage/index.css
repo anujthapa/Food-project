@@ -1,0 +1,22 @@
+.content{
+  display: flex;
+  flex-wrap: wrap;
+}
+.content-menu{
+  flex: 1;
+  background-color: orange;
+
+}
+.content-content{
+  flex:5;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card{
+  margin:1vh;
+}
+img{
+  border:2px solid orange;
+  height: 30vh;
+  width: 10vw;
+}

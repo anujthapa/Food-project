@@ -1,44 +1,91 @@
 export const data = [
   {
-    name: "Crock Pot Roast",
+    name: "Salad",
+    type: "lunch",
+    category: "Vegan",
+    key: ["american", "asian"],
     ingredients: [
       {
-        quantity: "1",
-        name: " beef roast",
-        type: "Meat"
+        quantity: 1,
+        unit: "cup",
+        name: " Strawberries"
       },
       {
-        quantity: "1 package",
-        name: "brown gravy mix",
-        type: "Baking"
+        quantity: 1,
+        unit: "cup",
+        name: " raspberries"
       },
       {
-        quantity: "1 package",
-        name: "dried Italian salad dressing mix",
-        type: "Condiments"
+        quantity: 1,
+        unit: "cup",
+        name: " grapes"
       },
       {
-        quantity: "1 package",
-        name: "dry ranch dressing mix",
-        type: "Condiments"
+        quantity: 1,
+        unit: "piece",
+        name: " diced apples"
       },
       {
-        quantity: "1/2 cup",
-        name: "water",
-        type: "Drinks"
+        quantity: 1,
+        unit: "piece",
+        name: " sliced bananas"
+      },
+      {
+        quantity: 50,
+        unit: "gram",
+        name: " yogurt"
+      },
+      {
+        quantity: 50,
+        unit: "gram",
+        name: "cream"
       }
     ],
     steps: [
-      "Place beef roast in crock pot.",
-      "Mix the dried mixes together in a bowl and sprinkle over the roast.",
-      "Pour the water around the roast.",
-      "Cook on low for 7-9 hours."
+      "Place all of the prepared fruit in a medium bowl.",
+      " Stir in Yogurt and Cool Whip. Sample the deliciousness… then gobble up a little more."
     ],
-    timers: [0, 0, 0, 420],
-    imageURL:
-      "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/27/20/8/picVfzLZo.jpg",
-    originalURL: "http://www.food.com/recipe/to-die-for-crock-pot-roast-27208"
+
+    imageURL: [
+      "https://natashaskitchen.com/wp-content/uploads/2015/05/Quick-and-Easy-Fruit-Salad-4.jpg",
+      "https://natashaskitchen.com/wp-content/uploads/2015/05/Quick-and-Easy-Fruit-Salad.jpg",
+      "https://natashaskitchen.com/wp-content/uploads/2015/05/Quick-and-Easy-Fruit-Salad-3.jpg"
+    ]
   },
+  {
+    name: "American breakfast",
+    type: "Breakfast",
+    category: "american",
+    key: ["american", "meat"],
+    ingredients: [
+      {
+        quantity: 100,
+        unit: "gm",
+        name: " Bacon"
+      },
+      {
+        quantity: 500,
+        unit: "gm",
+        name: " Potato"
+      },
+      {
+        quantity: 1,
+        unit: "kg",
+        name: " Whole wheat flour pancakes"
+      },
+      {
+        quantity: 3,
+        unit: "piece",
+        name: "Egg"
+      }
+    ],
+    steps: ["Preapre Potato", "Preapre Eggs"],
+
+    imageURL: [
+      "https://cms.qz.com/wp-content/uploads/2016/02/img_1223-5-16-21-pm.jpg?quality=75&strip=all&w=1880"
+    ]
+  },
+
   {
     name: "Roasted Asparagus",
     ingredients: [
@@ -71,9 +118,9 @@ export const data = [
       "They are great plain, but sometimes I serve them with a light vinaigrette if we need something acidic to balance out our meal."
     ],
     timers: [0, 0, 0, 0, 0, 0, 10, 0, 0, 0],
-    imageURL:
-      "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/50/84/7/picMcSyVd.jpg",
-    originalURL: "http://www.food.com/recipe/roasted-asparagus-50847"
+    imageURL: [
+      "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/50/84/7/picMcSyVd.jpg"
+    ]
   },
   {
     name: "Curried Lentils and Rice",
@@ -112,8 +159,9 @@ export const data = [
       "Enjoy!"
     ],
     timers: [0, 0, 20, 20, 0],
-    imageURL:
+    imageURL: [
       "http://dagzhsfg97k4.cloudfront.net/wp-content/uploads/2012/05/lentils3.jpg"
+    ]
   },
   {
     name: "Big Night Pizza",
@@ -169,8 +217,9 @@ export const data = [
       "Enjoy!"
     ],
     timers: [15, 60, 0, 0, 0, 15, 0],
-    imageURL:
+    imageURL: [
       "http://upload.wikimedia.org/wikipedia/commons/c/c7/Spinach_pizza.jpg"
+    ]
   },
   {
     name: "Cranberry and Apple Stuffed Acorn Squash Recipe",
@@ -217,9 +266,9 @@ export const data = [
       "Enjoy!"
     ],
     timers: [0, 0, 0, 30, 0, 0, 30, 0],
-    imageURL:
-      "http://elanaspantry.com/wp-content/uploads/2008/10/acorn_squash_with_cranberry.jpg",
-    originalURL: ""
+    imageURL: [
+      "http://elanaspantry.com/wp-content/uploads/2008/10/acorn_squash_with_cranberry.jpg"
+    ]
   },
   {
     name: "Mic's Yorkshire Puds",
@@ -257,10 +306,9 @@ export const data = [
       "Bake for 30 minutes until well browned and risen."
     ],
     timers: [0, 0, 0, 30, 0, 0, 5, 0, 30],
-    imageURL:
-      "http://upload.wikimedia.org/wikipedia/commons/f/f9/Yorkshire_Pudding.jpg",
-    originalURL:
+    imageURL: [
       "http://upload.wikimedia.org/wikipedia/commons/f/f9/Yorkshire_Pudding.jpg"
+    ]
   },
   {
     name: "Old-Fashioned Oatmeal Cookies",
@@ -339,9 +387,9 @@ export const data = [
       "About 6 1/2 dozen cookies."
     ],
     timers: [15, 0, 0, 0, 0, 0, 0, 0, 8, 0],
-    imageURL:
-      "http://s3.amazonaws.com/gmi-digital-library/65caecf7-a8f7-4a09-8513-2659cf92871e.jpg",
-    originalURL: "#"
+    imageURL: [
+      "http://s3.amazonaws.com/gmi-digital-library/65caecf7-a8f7-4a09-8513-2659cf92871e.jpg"
+    ]
   },
   {
     name: "Blueberry Oatmeal Squares",
@@ -408,10 +456,9 @@ export const data = [
       "(Make-ahead: Cover and refrigerate for up to 2 days or overwrap with heavy-duty foil and freeze for up to 2 weeks.)"
     ],
     timers: [10, 1, 60, 0, 0, 45, 0, 0],
-    imageURL:
-      "http://www.canadianliving.com/img/photos/biz/blueberry-oatmeal-squares5801359401371.jpg",
-    originalURL:
-      "http://www.canadianliving.com/food/blueberry_oatmeal_squares.php"
+    imageURL: [
+      "http://www.canadianliving.com/img/photos/biz/blueberry-oatmeal-squares5801359401371.jpg"
+    ]
   },
   {
     name: "Curried chicken salad",
@@ -489,9 +536,8 @@ export const data = [
       "Sandwich with tops"
     ],
     timers: [0, 0, 0, 6, 0, 0, 0, 0, 0],
-    imageURL:
-      "http://www.chatelaine.com/wp-content/uploads/2013/05/Curried-chicken-salad.jpg",
-    originalURL:
-      "http://www.chatelaine.com/recipe/stovetop-cooking-method/curried-chicken-salad/"
+    imageURL: [
+      "http://www.chatelaine.com/wp-content/uploads/2013/05/Curried-chicken-salad.jpg"
+    ]
   }
 ];

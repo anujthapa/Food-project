@@ -9,6 +9,16 @@ import "./App.css";
 
 class App extends Component {
   render() {
+    const data = [1, 2, 3, 4, 5, 6, 7, 8];
+
+    const changeNumber = () => {
+      for (let i = 0; i < data.length; i++) {
+        console.log("new data ", data[i]);
+      }
+    };
+    setInterval(function() {
+      changeNumber();
+    }, 3000);
     return (
       <Provider store={store}>
         <Router>

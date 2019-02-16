@@ -1,11 +1,9 @@
 import React from "react";
 
-const Card = ({ title, image, steps }) => {
+const Card = ({ title, img, ingredients }) => {
   return (
-    <div>
-      <div>{title}</div>
-      <img src={image} alt="Foodimage" />
-      <div>{steps} </div>
+    <div class="card " style={{ width: "18rem" }}>
+      <img class="card-img-top" src={img} alt="Card image cap" />
     </div>
   );
 };
